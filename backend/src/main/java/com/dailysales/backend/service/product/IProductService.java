@@ -1,5 +1,6 @@
 package com.dailysales.backend.service.product;
 
+import com.dailysales.backend.dto.ProductDto;
 import com.dailysales.backend.model.Product;
 import com.dailysales.backend.request.AddProductRequest;
 import com.dailysales.backend.request.ProductUpdateRequest;
@@ -21,5 +22,7 @@ public interface IProductService {
     List<Product> getProductsByBrandAndName(String category, String name);
     Long countProductsByBrandAndName(String brand, String name);
 
+    List<ProductDto> getConvertedProducts(List<Product> products);
 
+    ProductDto convertToDto(Product product);
 }
